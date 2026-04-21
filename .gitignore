@@ -1,0 +1,27 @@
+# 1. Dependensi Composer (Library)
+/vendor/
+composer.lock
+
+# 2. Konfigurasi Database & Kredensial (SANGAT PENTING!)
+/config/koneksi.php
+koneksi.php
+
+# 3. File Hasil Export (Agar riwayat laporan instansi tidak terpublikasi)
+*.pdf
+*.xls
+*.xlsx
+*.csv
+*.json
+
+# 4. Log Error PHP atau Apache
+error_log
+*.log
+php_errors.log
+
+# 5. File Bawaan Sistem Operasi (Mac/Windows)
+.DS_Store
+Thumbs.db
+
+# 6. Folder Konfigurasi Text Editor 
+.vscode/
+.idea/
