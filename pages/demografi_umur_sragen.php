@@ -6,23 +6,20 @@ $result = mysqli_query($conn, $sql);
 
 <div class="d-flex justify-content-between align-items-center mb-3">
     <h3 class="fw-bold text-dark m-0">Data Penduduk Berdasarkan Kelompok Umur</h3>
-    
-    <?php if(isset($_SESSION['role']) && ($_SESSION['role'] == 1 || $_SESSION['role'] == 2)): ?>
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle shadow-sm fw-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="bi bi-download me-2"></i> Export Data
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end shadow border-0">
-                <li><h6 class="dropdown-header text-uppercase">Pilih Format</h6></li>
-                <li><a class="dropdown-item py-2" href="exports/export_umur.php?type=excel"><i class="bi bi-file-earmark-excel-fill text-success me-2"></i> Export Excel</a></li>
-                <li><a class="dropdown-item py-2" href="exports/export_umur.php?type=csv"><i class="bi bi-filetype-csv text-secondary me-2"></i> Export CSV</a></li>
-                <li><a class="dropdown-item py-2" href="exports/export_umur.php?type=pdf" target="_blank"><i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i> Export PDF</a></li>
-                <li><a class="dropdown-item py-2" href="exports/export_umur.php?type=json" target="_blank"><i class="bi bi-filetype-json text-warning me-2"></i> Export JSON</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item py-2" href="javascript:window.print()"><i class="bi bi-printer-fill text-dark me-2"></i> Cetak Halaman</a></li>
+      <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle shadow-sm fw-bold" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-download me-2"></i> Export Data
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+              <li><h6 class="dropdown-header text-uppercase">Pilih Format</h6></li>
+              <li><a class="dropdown-item py-2" href="exports/export_umur.php?type=excel"><i class="bi bi-file-earmark-excel-fill text-success me-2"></i> Export Excel</a></li>
+              <li><a class="dropdown-item py-2" href="exports/export_umur.php?type=csv"><i class="bi bi-filetype-csv text-secondary me-2"></i> Export CSV</a></li>
+              <li><a class="dropdown-item py-2" href="exports/export_umur.php?type=pdf" target="_blank"><i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i> Export PDF</a></li>
+              <li><a class="dropdown-item py-2" href="exports/export_umur.php?type=json" target="_blank"><i class="bi bi-filetype-json text-warning me-2"></i> Export JSON</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item py-2" href="javascript:window.print()"><i class="bi bi-printer-fill text-dark me-2"></i> Cetak Halaman</a></li>
             </ul>
         </div>
-    <?php endif; ?>
 </div>
 
 <div class="row justify-content-center mb-5">
