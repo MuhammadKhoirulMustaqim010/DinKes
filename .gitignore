@@ -2,11 +2,11 @@
 /vendor/
 composer.lock
 
-# 2. Konfigurasi Database & Kredensial (SANGAT PENTING!)
+# 2. Konfigurasi Database & Kredensial 
 /config/koneksi.php
 koneksi.php
 
-# 3. File Hasil Export (Agar riwayat laporan instansi tidak terpublikasi)
+# 3. File Hasil Export 
 *.pdf
 *.xls
 *.xlsx
@@ -18,7 +18,7 @@ error_log
 *.log
 php_errors.log
 
-# 5. File Bawaan Sistem Operasi (Mac/Windows)
+# 5. File Bawaan Sistem Operasi 
 .DS_Store
 Thumbs.db
 
