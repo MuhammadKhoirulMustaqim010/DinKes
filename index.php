@@ -2,12 +2,6 @@
 // index.php
 session_start();
 
-// CEK APAKAH SUDAH LOGIN?
-if (!isset($_SESSION['login_status']) || $_SESSION['login_status'] !== true) {
-    // header("location: login.php?pesan=belum_login");
-    // exit;
-}
-
 // Panggil koneksi database
 include "config/koneksi.php";
 
@@ -50,6 +44,11 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
                     </a>
                 </li>
                 <li>
+                    <a href="index.php?page=kematian_pasien_rs_sragen" class="<?= ($halaman == 'kematian_pasien_rs_sragen') ? 'active' : ''; ?>">
+                        <i class="bi bi-emoji-frown-fill me-3"></i>Kematian Pasien RS
+                    </a>
+                </li>
+                <li>
                     <a href="index.php?page=indikator_kinerja_rs_sragen" class="<?= ($halaman == 'indikator_kinerja_rs_sragen') ? 'active' : ''; ?>">
                         <i class="bi bi-people-fill me-3"></i>Indikator Kinerja RS
                     </a>
@@ -73,12 +72,16 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
                         include "pages/demografi_sragen_2025.php";
                         break;
 
-                    case 'indikator_kinerja_rs_sragen':
-                        include "pages/indikator_kinerja_rs_sragen.php";
-                        break;
-
                     case 'demografi_umur_sragen':
                         include "pages/demografi_umur_sragen.php";
+                        break;
+
+                    case 'kematian_pasien_rs_sragen':
+                        include "pages/kematian_pasien_rs_sragen.php";
+                        break;
+
+                    case 'indikator_kinerja_rs_sragen':
+                        include "pages/indikator_kinerja_rs_sragen.php";
                         break;
 
                     default:
