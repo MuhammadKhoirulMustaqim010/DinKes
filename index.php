@@ -44,6 +44,11 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
                     </a>
                 </li>
                 <li>
+                    <a href="index.php?page=melek_huruf_pend_sragen" class="<?= ($halaman == 'melek_huruf_pend_sragen') ? 'active' : ''; ?>">
+                        <i class="bi bi-journal-text me-3"></i>Melek Huruf & Pendidikan
+                    </a>
+                </li>
+                <li>
                     <a href="index.php?page=kematian_pasien_rs_sragen" class="<?= ($halaman == 'kematian_pasien_rs_sragen') ? 'active' : ''; ?>">
                         <i class="bi bi-emoji-frown-fill me-3"></i>Kematian Pasien RS
                     </a>
@@ -74,6 +79,10 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
 
                     case 'demografi_umur_sragen':
                         include "pages/demografi_umur_sragen.php";
+                        break;
+
+                    case 'melek_huruf_pend_sragen':
+                        include "pages/melek_huruf_pend_sragen.php";
                         break;
 
                     case 'kematian_pasien_rs_sragen':
