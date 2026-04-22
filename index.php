@@ -58,6 +58,11 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
                         <i class="bi bi-people-fill me-3"></i>Indikator Kinerja RS
                     </a>
                 </li>
+                <li>
+                    <a href="index.php?page=penyakit_rawat_jalan" class="<?= ($halaman == 'penyakit_rawat_jalan') ? 'active' : ''; ?>">
+                        <i class="bi bi-clipboard2-pulse-fill me-3"></i>Penyakit Rawat Jalan
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -91,6 +96,10 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
 
                     case 'indikator_kinerja_rs_sragen':
                         include "pages/indikator_kinerja_rs_sragen.php";
+                        break;
+
+                    case 'penyakit_rawat_jalan':
+                        include "pages/penyakit_rawat_jalan.php";
                         break;
 
                     default:
