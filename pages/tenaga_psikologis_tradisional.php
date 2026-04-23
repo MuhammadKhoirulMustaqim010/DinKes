@@ -55,6 +55,7 @@ $result = mysqli_query($conn, $sql);
                         <thead class="text-center align-middle border-dark">
                             <tr>
                                 <th rowspan="2" width="4%" class="bg-dark text-white border-end py-3">No</th>
+                                <th rowspan="2" class="bg-dark text-white border-end px-3">Kategori</th>
                                 <th rowspan="2" class="text-start bg-dark text-white border-end px-4" style="min-width: 250px;">Fasilitas Kesehatan</th>
                                 <th colspan="3" class="table-success border-end border-bottom">Tenaga Kefarmasian</th>
                                 <th colspan="3" class="table-info border-end border-bottom">Tenaga Psikologi Klinis</th>
@@ -114,8 +115,16 @@ $result = mysqli_query($conn, $sql);
                                     $v_tra_p = ($tra_p > 0) ? number_format($tra_p, 0, ',', '.') : '-';
                                     $v_tra_t = ($tra_t > 0) ? number_format($tra_t, 0, ',', '.') : '-';
 
+                                    $kategori = strtoupper(trim($row["kategori"]));
+                                    if ($kategori == 'PUSKESMAS') {
+                                        $badge_kategori = "<span class='badge bg-info text-dark bg-opacity-25 border border-info'>{$row['kategori']}</span>";
+                                    } else {
+                                        $badge_kategori = "<span class='badge bg-warning text-dark bg-opacity-25 border border-warning'>{$row['kategori']}</span>";
+                                    }
+
                                     echo "<tr>";
                                     echo "<td class='text-muted border-end fw-bold'>" . htmlspecialchars($row["no"]) . "</td>";
+                                    echo "<td class='border-end'>{$badge_kategori}</td>";
                                     
                                     // Hilangkan underscore pada nama fasyankes jika ada
                                     $nama_faskes = str_replace('_', ' ', $row["fasyankes"]);
@@ -146,7 +155,7 @@ $result = mysqli_query($conn, $sql);
                         
                         <tfoot class="position-sticky bottom-0 z-1">
                             <tr class="table-dark text-center fw-bold align-middle border-top border-2 border-dark">
-                                <td colspan="2" class="py-3 text-end px-4 bg-dark text-white border-end">TOTAL KESELURUHAN</td>
+                                <td colspan="3" class="py-3 text-middle px-4 bg-dark text-white border-end">TOTAL KESELURUHAN</td>
                                 
                                 <td class="text-white"><?= ($t_far_l > 0) ? number_format($t_far_l, 0, ',', '.') : '-' ?></td>
                                 <td class="text-white"><?= ($t_far_p > 0) ? number_format($t_far_p, 0, ',', '.') : '-' ?></td>
@@ -163,6 +172,10 @@ $result = mysqli_query($conn, $sql);
                         </tfoot>
                         
                     </table>
+                </div>
+                <div class="mt-3 text-muted small">
+                    <i class="bi bi-info-circle-fill me-2"></i><strong>Keterangan:</strong>
+                    &bull; Data Kesehatan Termasuk yang Memiliki Ijazah Pasca Sarjana dan Doktor<br>
                 </div>
             </div>
             
