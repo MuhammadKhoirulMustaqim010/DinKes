@@ -36,7 +36,7 @@ $kepadatan_total = ($total_luas > 0) ? ($total_penduduk / $total_luas) : 0;
         <li><h6 class="dropdown-header text-uppercase">Pilih Format</h6></li>
         <li><a class="dropdown-item py-2" href="exports/export_demografi_sragen_2025.php?type=excel"><i class="bi bi-file-earmark-excel-fill text-success me-2"></i> Export Excel</a></li>
         <li><a class="dropdown-item py-2" href="exports/export_demografi_sragen_2025.php?type=csv"><i class="bi bi-filetype-csv text-secondary me-2"></i> Export CSV</a></li>
-        <li><a class="dropdown-item py-2" href="exports/export_demografi_sragen_2025.php?type=pdf" target="_blank"><i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i> Export PDF</a></li>
+        <li><a class="dropdown-item py-2" href="exports/export_demografi_sragen_2025.php?type=pdf"><i class="bi bi-file-earmark-pdf-fill text-danger me-2"></i> Export PDF</a></li>
         <li><a class="dropdown-item py-2" href="exports/export_demografi_sragen_2025.php?type=json" target="_blank"><i class="bi bi-filetype-json text-warning me-2"></i> Export JSON</a></li>
         <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item py-2" href="javascript:window.print()"><i class="bi bi-printer-fill text-dark me-2"></i> Cetak Halaman</a></li>

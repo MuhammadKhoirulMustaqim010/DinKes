@@ -156,6 +156,10 @@ $result = mysqli_query($conn, $sql);
                         
                     </table>
                 </div>
+                <div class="mt-3 text-muted small">
+                    <i class="bi bi-info-circle-fill me-1"></i> <strong>Keterangan:</strong><br>
+                    &bull; Tenaga Kesehatan Termasuk yang Memiliki Ijazah Pasca Sarjana dan Doktor
+                </div>
             </div>
             
         </div>

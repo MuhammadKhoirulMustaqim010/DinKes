@@ -116,7 +116,7 @@ $result = mysqli_query($conn, $sql);
                 <div class="mt-3 text-muted small">
                     <i class="bi bi-info-circle-fill me-1"></i> <strong>Keterangan:</strong><br>
                     &bull; <strong>CFR (Case Fatality Rate):</strong> Persentase tingkat kematian akibat penyakit tertentu (Pasien Mati / Total Pasien &times; 100%).<br>
-                    &bull; Data diambil berdasarkan standar klasifikasi penyakit internasional <strong>(ICD-10)</strong>.
+                    &bull; Data diambil berdasarkan standar klasifikasi penyakit internasional <strong>(ICD-X)</strong>.
                 </div>
             </div>
             

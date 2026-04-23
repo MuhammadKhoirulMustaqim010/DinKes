@@ -1,7 +1,7 @@
 <?php
-// exports/export_demografi.php
+
 session_start();
-include "../config/koneksi.php"; // Sesuaikan path koneksi
+include "../config/koneksi.php"; 
 
 $type = isset($_GET['type']) ? $_GET['type'] : '';
 $filename = "Data_Demografi_Sragen_" . date('Y-m-d_H-i-s');
@@ -73,11 +73,7 @@ switch ($type) {
         exit;
 
     case 'pdf':
-        // Untuk PDF Native paling stabil menggunakan window.print() 
-        // atau library seperti Dompdf. 
-        // Sementara kita arahkan ke halaman khusus cetak rapi:
-        echo "<script>window.print();</script>";
-        // (Saran: Gunakan library Dompdf untuk hasil profesional)
+        echo "<script>javascript:window.print();</script>";
         exit;
 
     default:
