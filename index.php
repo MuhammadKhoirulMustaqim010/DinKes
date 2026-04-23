@@ -78,6 +78,11 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
                         <i class="bi bi-exclamation-triangle-fill me-3"></i>Fatalitas Rawat Inap
                     </a>
                 </li>
+                <li>
+                    <a href="index.php?page=tenaga_medis_sragen" class="<?= ($halaman == 'tenaga_medis_sragen') ? 'active' : ''; ?>">
+                        <i class="bi bi-person-badge-fill me-3"></i>Tenaga Medis
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -127,6 +132,10 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
                     
                     case 'fatalitas_rawat_inap':
                         include "pages/fatalitas_rawat_inap.php";
+                        break;
+                    
+                    case 'tenaga_medis_sragen':
+                        include "pages/tenaga_medis_sragen.php";
                         break;
 
                     default:
