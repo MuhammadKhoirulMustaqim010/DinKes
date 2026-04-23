@@ -80,12 +80,17 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
                 </li>
                 <li>
                     <a href="index.php?page=tenaga_medis_sragen" class="<?= ($halaman == 'tenaga_medis_sragen') ? 'active' : ''; ?>">
-                        <i class="bi bi-person-badge-fill me-3"></i>Tenaga Medis
+                        <i class="bi bi-person-badge-fill me-3"></i>Tenaga Kedokteran
                     </a>
                 </li>
                 <li>
                     <a href="index.php?page=tenaga_perawat_kebidanan" class="<?= ($halaman == 'tenaga_perawat_kebidanan') ? 'active' : ''; ?>">
                         <i class="bi bi-bandaid-fill me-3"></i>Tenaga Keperawatan & Kebidanan
+                    </a>
+                </li>
+                <li>
+                    <a href="index.php?page=tenaga_psikologis_tradisional" class="<?= ($halaman == 'tenaga_psikologis_tradisional') ? 'active' : ''; ?>">
+                        <i class="bi bi-emoji-smile-fill me-3"></i>Tenaga Psikologis & Tradisional
                     </a>
                 </li>
             </ul>
@@ -145,6 +150,10 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
 
                     case 'tenaga_perawat_kebidanan':
                         include "pages/tenaga_perawat_kebidanan.php";
+                        break;
+
+                    case 'tenaga_psikologis_tradisional':
+                        include "pages/tenaga_psikologis_tradisional.php";
                         break;
 
                     default:

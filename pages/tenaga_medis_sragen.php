@@ -56,6 +56,7 @@ $result = mysqli_query($conn, $sql);
                         <thead class="text-center align-middle border-dark">
                             <tr>
                                 <th rowspan="3" width="3%" class="bg-dark text-white border-end py-3">No</th>
+                                <th rowspan="3" class="bg-dark text-white border-end px-3">Kategori</th>
                                 <th rowspan="3" class="text-start bg-dark text-white border-end px-4" style="min-width: 250px;">Unit Kerja / Fasilitas Kesehatan</th>
                                 <th colspan="12" class="table-info border-end border-bottom">DOKTER (UMUM & SPESIALIS)</th>
                                 <th colspan="12" class="table-success border-bottom">DOKTER GIGI (UMUM & SPESIALIS)</th>
@@ -102,8 +103,17 @@ $result = mysqli_query($conn, $sql);
                                         'total_drg_l', 'total_drg_p', 'total_drg_tot'
                                     ];
 
+                                    // Styling Badge untuk Kategori (Puskesmas vs Rumah Sakit)
+                                    $kategori = strtoupper(trim($row["kategori"]));
+                                    if ($kategori == 'PUSKESMAS') {
+                                        $badge_kategori = "<span class='badge bg-info text-dark bg-opacity-25 border border-info'>{$row['kategori']}</span>";
+                                    } else {
+                                        $badge_kategori = "<span class='badge bg-warning text-dark bg-opacity-25 border border-warning'>{$row['kategori']}</span>";
+                                    }
+
                                     echo "<tr>";
                                     echo "<td class='text-muted border-end fw-bold'>" . htmlspecialchars($row["no"]) . "</td>";
+                                    echo "<td class='border-end'>{$badge_kategori}</td>";
                                     // Hilangkan underscore jika ada di nama unit_kerja menggunakan str_replace
                                     $nama_unit_bersih = str_replace('_', ' ', $row["unit_kerja"]);
                                     echo "<td class='text-start fw-bold text-dark border-end text-wrap px-4'>" . htmlspecialchars($nama_unit_bersih) . "</td>";
@@ -132,7 +142,7 @@ $result = mysqli_query($conn, $sql);
                         
                         <tfoot class="position-sticky bottom-0 z-1">
                             <tr class="table-dark text-center fw-bold align-middle border-top border-2 border-dark">
-                                <td colspan="2" class="py-3 text-end px-4 bg-dark text-white border-end">TOTAL KESELURUHAN</td>
+                                <td colspan="3" class="py-3 text-middle px-4 bg-dark text-white border-end">TOTAL KESELURUHAN</td>
                                 <?php
                                 // Menampilkan array Total yang sudah dihitung
                                 foreach ($totals as $index => $tot) {
