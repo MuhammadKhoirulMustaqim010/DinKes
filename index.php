@@ -93,6 +93,11 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
                         <i class="bi bi-emoji-smile-fill me-3"></i>Tenaga Psikologis & Tradisional
                     </a>
                 </li>
+                <li>
+                    <a href="index.php?page=penyebab_kematian_ibu" class="<?= ($halaman == 'penyebab_kematian_ibu') ? 'active' : ''; ?>">
+                        <i class="bi bi-person-standing-dress me-3"></i>Penyebab Kematian Ibu
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -154,6 +159,10 @@ $halaman = isset($_GET['page']) ? $_GET['page'] : 'demografi_sragen_2025';
 
                     case 'tenaga_psikologis_tradisional':
                         include "pages/tenaga_psikologis_tradisional.php";
+                        break;
+
+                    case 'penyebab_kematian_ibu':
+                        include "pages/penyebab_kematian_ibu.php";
                         break;
 
                     default:
